@@ -1,0 +1,15 @@
+version: '3'
+
+services:
+  pokemon:
+    container_name: pokemon
+    build: .
+    environment:
+      KAFKA_BROKER_URL: broker:9092
+      TOPIC_NAME: pokemon
+      SLEEP_TIME: 5
+
+networks:
+  default:
+    external:
+      name: kafka-network

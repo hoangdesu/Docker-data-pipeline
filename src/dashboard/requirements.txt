@@ -1,0 +1,10 @@
+pandas
+numpy
+datetime
+pathlib
+cassandra-driver
+scipy
+plotly
+dash-core-components
+dash-html-components
+dash

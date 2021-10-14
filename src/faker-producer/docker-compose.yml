@@ -1,0 +1,15 @@
+version: '3'
+
+services:
+  faker:
+    container_name: faker
+    build: .
+    environment:
+      KAFKA_BROKER_URL: broker:9092
+      TOPIC_NAME: faker
+      SLEEP_TIME: 5
+
+networks:
+  default:
+    external:
+      name: kafka-network

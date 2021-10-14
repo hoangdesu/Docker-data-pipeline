@@ -1,0 +1,15 @@
+version: "3"
+
+services:
+  twitter_service:
+    container_name: twitter_service
+    build: .
+    environment:
+      KAFKA_BROKER_URL: broker:9092
+      TOPIC_NAME: twitter
+      BATCH_SIZE: 10
+
+networks:
+  default:
+    external:
+      name: kafka-network

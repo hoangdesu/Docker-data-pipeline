@@ -1,0 +1,45 @@
+version: '3'
+
+services:
+  tweetconsumer:
+    container_name: twitterconsumer
+    image: twitterconsumer
+    build: .
+    environment:
+      KAFKA_BROKER_URL: broker:9092
+      TOPIC_NAME: twitter
+      SINK_TOPIC_NAME: twittersink
+      SLEEP_TIME: 10
+      BATCH_SIZE: 10
+  weatherconsumer:
+    container_name: weatherconsumer
+    image: twitterconsumer
+    environment:
+      KAFKA_BROKER_URL: broker:9092
+      TOPIC_NAME: weather
+      CASSANDRA_HOST: cassandradb
+      CASSANDRA_KEYSPACE: kafkapipeline
+    command: ["python", "-u","python/weather_consumer.py"]
+  fakerconsumer:
+    container_name: fakerconsumer
+    image: twitterconsumer
+    environment:
+      KAFKA_BROKER_URL: broker:9092
+      TOPIC_NAME: faker
+      CASSANDRA_HOST: cassandradb
+      CASSANDRA_KEYSPACE: kafkapipeline
+    command: ["python", "-u","python/faker_consumer.py"]
+  pokemonconsumer:
+    container_name: pokemonconsumer
+    image: twitterconsumer
+    environment:
+      KAFKA_BROKER_URL: broker:9092
+      TOPIC_NAME: faker
+      CASSANDRA_HOST: cassandradb
+      CASSANDRA_KEYSPACE: kafkapipeline
+    command: ["python", "-u","python/pokemon_consumer.py"]
+    
+networks:
+  default:
+    external:
+      name: kafka-network

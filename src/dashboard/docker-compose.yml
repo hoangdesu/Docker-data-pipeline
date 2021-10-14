@@ -1,0 +1,23 @@
+version: "3"
+
+services:
+  dashboard:
+    container_name: dashboard
+    build:
+      context: .
+    image: dashboard
+    environment:
+      CASSANDRA_HOST: cassandradb
+      CASSANDRA_KEYSPACE: kafkapipeline
+      WEATHER_TABLE: weatherreport
+      TWITTER_TABLE: twitterdata
+      FAKER_TABLE: fakerdata
+      POKEMON_TABLE: pokedata
+    ports:
+      - "8050:8050"
+    restart: unless-stopped
+    
+networks:
+  default:
+    external:
+      name: cassandra-network

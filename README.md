@@ -11,7 +11,7 @@
 
 <a name="about"></a>
 # About
-This project is the first assignment from Big Data for Engineering class. It utilizes Docker to deploy an end-to-end data pipeline on your local computer using containerized Kafka for data streaming, Cassandra for NoSQL database with Jupyter Lab and Dash framework for data analysis Visualization. There are 3 pipelines using data from Twitter and OpenWeatherMap APIs, Faker API and PokeAPI.
+This project is the first assignment from Big Data for Engineering class. It utilizes Docker to deploy an end-to-end data pipeline on your local computer using containerized **Kafka** for data streaming, **Cassandra** for NoSQL database with **Jupyter Lab** and **Dash framework** for data analysis Visualization. There are 3 pipelines using data from Twitter and OpenWeatherMap APIs, Faker API and PokeAPI.
 
 
 <a name="pipeline"></a>

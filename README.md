@@ -5,43 +5,35 @@
 * [Data pipeline](#pipeline)
 * [How to replicate the project](#run)
 * [Demo video](#video)
+* [Acknowledgement](#acknowledgement)
+* [Connect](#connect)
 
 
 <a name="about"></a>
 # About
-This project is the first assignment from Big Data for Engineering class. It utilizes Docker to deploy an end-to-end data pipeline on your local computer using containerized Kafka for data streaming, Cassandra for NoSQL database with Jupyter Lab and Dash framework for data analysis Visualization. There are 3 pipelines using data from Twitter and OpenWeatherMap 
-APIs, Faker API and PokeAPI.
+This project is the first assignment from Big Data for Engineering class. It utilizes Docker to deploy an end-to-end data pipeline on your local computer using containerized Kafka for data streaming, Cassandra for NoSQL database with Jupyter Lab and Dash framework for data analysis Visualization. There are 3 pipelines using data from Twitter and OpenWeatherMap APIs, Faker API and PokeAPI.
+
 
 <a name="pipeline"></a>
 # Data pipeline
 
-<p>Kafka Producers and Consumers help stream data:</p>
+<p>Kafka Producers and Consumers help stream data from provided APIs:</p>
 <p align="center"><img src="./img/kafka.png" alt="Kafka" width="90%"></p>
 
-<p>Data is stored in Cassandra Database:</p>
-<p align="center"><img src="./img/kafka.png" alt="Kafka" width="90%"></p>
+<p>Data is then stored in Cassandra Database:</p>
+<p align="center"><img src="./img/cassandra.png" alt="Cassandra" width="90%"></p>
 
+<p>Using Jupyter Lab (or Dash) to query database and visualize data:</p>
+<p align="center"><img src="./img/jupyter.png" alt="Jupyter" width="90%"></p>
 
-
-
+<p>All Docker containers used in the pipeline:</p>
+<p align="center"><img src="./img/docker.png" alt="Docker" width="90%"></p>
 
 
 <a name="run"></a>
 # How to replicate the project
 
-
-
-
-
-
-
-
-<a name="video"></a>
-# Demo video
-https://youtu.be/7Qf5LH3mwek
-
-<a name="about"></a>
-The project is under folder `assignment-1-project`
+Containers for all things mentioned in this project can be found in the `src` folder. All images have been pre-built, however if you want to replicate the pipeline, you can rebuild the images and compose them up again using the following guide:
 
 #### Create docker networks
 <code>docker network create kafka-network
@@ -74,3 +66,26 @@ cqlsh:kafkapipeline> select * from fakerdata;</code>
 #### Data visualization
 - With Jupyter Notebook: <code>docker-compose -f data-vis/docker-compose.yml up -d --build</code>
 - With Dash: <code>docker-compose -f dashboard/docker-compose.yml up -d</code>
+
+
+<a name="video"></a>
+# Demo video
+[![Watch on Youtube!](https://img.youtube.com/vi/7Qf5LH3mwek/hqdefault.jpg)](https://youtu.be/7Qf5LH3mwek)
+
+
+<a name="acknowledgement"></a>
+# Acknowledgement
+Based on: https://github.com/salcaino/sfucmpt733/tree/main/foobar-kafka and https://github.com/vnyennhi/docker-kafka-cassandra
+
+
+<a name="connect"></a>
+# Connect with me
+* My [Website](https://hoangdesu.com/)
+* My [LinkedIn](https://www.linkedin.com/in/hoangdesu/)
+* My [Facebook](https://www.facebook.com/Hoangdayo/)
+* My [Instagram](https://www.instagram.com/hoang.desu/)
+* You can shoot me an [email](mailto:hoangdesu@gmail.com) too!
+
+If you find this project useful, you can let me know. I would love to hear about it! 🔥
+
+
